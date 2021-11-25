@@ -37,7 +37,7 @@ final class StatusMenu: NSObject {
     /// Init should not be called, use `.shared` instead.
     private override init() {
         statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        statusBarItem.button?.title = "􀋧"
+        statusBarItem.button?.title = "R"
         statusBarItem.button?.font = NSFont.systemFont(ofSize: 18)
         
         let foundHelper = NSWorkspace.shared.runningApplications.contains { $0.bundleIdentifier == StatusMenu.helperBundleName }
@@ -81,10 +81,10 @@ extension StatusMenu {
 extension StatusMenu {
     
     private func prepareDiskSectionFor(_ statusBarMenu: NSMenu) {
-        let create = statusBarMenu.addItem(withTitle: "􀁌\tCreate New RAM Disk...", action: #selector(createNewDisk), keyEquivalent: "")
+        let create = statusBarMenu.addItem(withTitle: "Create New RAM Disk...", action: #selector(createNewDisk), keyEquivalent: "")
         create.target = self
         
-        let statusItem = statusBarMenu.addItem(withTitle: "􀈕\tCreated Disks", action: nil, keyEquivalent: "")
+        let statusItem = statusBarMenu.addItem(withTitle: "Created Disks", action: nil, keyEquivalent: "")
         let subMenu = NSMenu(title: "Created Disks Submenu")
         
         if RAMDiskManager.shared.mountedRAMDisks.isEmpty {
@@ -107,7 +107,7 @@ extension StatusMenu {
         let autocreateDisks = statusBarMenu.addItem(withTitle: "", action: #selector(toggleAutocreateDisks), keyEquivalent: "")
         autocreateDisks.attributedTitle = RAMDiskManager.shared.shouldStoreDiskSetup ? "Auto-create disks on launch".checkmarked : "Auto-create disks on launch".crossed
         
-        let about = statusBarMenu.addItem(withTitle: "􀁜\tAbout RDisk", action: #selector(openAboutPage), keyEquivalent: "")
+        let about = statusBarMenu.addItem(withTitle: "About RDisk", action: #selector(openAboutPage), keyEquivalent: "")
         
         loginLaunch.target = self
         autocreateDisks.target = self
