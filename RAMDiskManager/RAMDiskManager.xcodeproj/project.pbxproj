@@ -17,6 +17,8 @@
 		03668AE723B2AEF70001D822 /* DiskMonitor in Frameworks */ = {isa = PBXBuildFile; productRef = 03668AE623B2AEF70001D822 /* DiskMonitor */; };
 		03668AEE23B2B0F60001D822 /* RAMDiskManager+Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03668AED23B2B0F60001D822 /* RAMDiskManager+Persistance.swift */; };
 		03668AF123B2BB670001D822 /* RAMDisk+RestorationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03668AF023B2BB670001D822 /* RAMDisk+RestorationData.swift */; };
+		941E54E627519F49005AEA7C /* RamDiskManager+ContentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E54E527519F49005AEA7C /* RamDiskManager+ContentSync.swift */; };
+		941E54EB275284D9005AEA7C /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E54EA275284D9005AEA7C /* String+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		03668AE023B2AEB00001D822 /* DADisk+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DADisk+Helper.swift"; sourceTree = "<group>"; };
 		03668AED23B2B0F60001D822 /* RAMDiskManager+Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RAMDiskManager+Persistance.swift"; sourceTree = "<group>"; };
 		03668AF023B2BB670001D822 /* RAMDisk+RestorationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RAMDisk+RestorationData.swift"; sourceTree = "<group>"; };
+		941E54E527519F49005AEA7C /* RamDiskManager+ContentSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RamDiskManager+ContentSync.swift"; sourceTree = "<group>"; };
+		941E54EA275284D9005AEA7C /* String+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 				03668AD923B2AE930001D822 /* RAMDisk */,
 				03668AE023B2AEB00001D822 /* DADisk+Helper.swift */,
 				03668ACD23B2AE3F0001D822 /* Info.plist */,
+				941E54EA275284D9005AEA7C /* String+Helper.swift */,
 			);
 			path = RAMDiskManager;
 			sourceTree = "<group>";
@@ -79,6 +84,7 @@
 				03668AD723B2AE930001D822 /* RAMDiskManager.swift */,
 				03668AED23B2B0F60001D822 /* RAMDiskManager+Persistance.swift */,
 				03668AD823B2AE930001D822 /* RAMDiskManager+Candidate.swift */,
+				941E54E527519F49005AEA7C /* RamDiskManager+ContentSync.swift */,
 			);
 			path = RAMDiskManager;
 			sourceTree = "<group>";
@@ -180,12 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941E54E627519F49005AEA7C /* RamDiskManager+ContentSync.swift in Sources */,
 				03668AEE23B2B0F60001D822 /* RAMDiskManager+Persistance.swift in Sources */,
 				03668ADE23B2AE940001D822 /* RAMDisk+Error.swift in Sources */,
 				03668ADC23B2AE940001D822 /* RAMDiskManager.swift in Sources */,
 				03668ADD23B2AE940001D822 /* RAMDiskManager+Candidate.swift in Sources */,
 				03668ADF23B2AE940001D822 /* RAMDisk.swift in Sources */,
 				03668AF123B2BB670001D822 /* RAMDisk+RestorationData.swift in Sources */,
+				941E54EB275284D9005AEA7C /* String+Helper.swift in Sources */,
 				03668AE123B2AEB00001D822 /* DADisk+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

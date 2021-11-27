@@ -73,7 +73,12 @@ public final class RAMDiskManager {
     
     /// Property that holds all currently mounted ram disks. Each time this array changes,
     /// a `.ramDisksWereUpdated` notification is posted.
-    public var mountedRAMDisks: [RAMDisk] = [] { didSet { storeDiskSetupIfNeeded(); NotificationCenter.default.post(name: .ramDisksWereUpdated, object: self) } }
+    public var mountedRAMDisks: [RAMDisk] = [] {
+        didSet {
+            storeDiskSetupIfNeeded();
+            NotificationCenter.default.post(name: .ramDisksWereUpdated, object: self);
+        }
+    }
     
     
     
@@ -166,6 +171,7 @@ extension RAMDiskManager {
             
             let ramDisk = RAMDisk(devicePath: candidate.devicePath, rawDisk: disk)
             mountedRAMDisks.append(ramDisk)
+            restoreDiskContentIfNeeded(disk: ramDisk)
             diskCreatingCompletions[candidate]?(ramDisk, nil)
             diskCreatingCompletions[candidate] = nil
             result = true
@@ -228,6 +234,7 @@ extension RAMDiskManager {
             
             let ramDisk = RAMDisk(devicePath: data.devicePath, rawDisk: foundDisk)
             mountedRAMDisks.append(ramDisk)
+            restoreDiskContentIfNeeded(disk: ramDisk)
             restoreData.remove(at: index)
         }
     }

@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         RAMDiskManager.shared.restoreDiskSetup()
         RAMDiskManager.shared.prepareShouldStoreDiskSetupPersistance()
+        RAMDiskManager.shared.prepareSyncFolderPersistance()
         StatusMenu.shared.show()
     }
 

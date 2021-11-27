@@ -22,6 +22,7 @@
 		03D3A4FE23AA30590073BB86 /* NSApp+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D3A4FD23AA30590073BB86 /* NSApp+Helper.swift */; };
 		03D3A50023AA443A0073BB86 /* StatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D3A4FF23AA443A0073BB86 /* StatusMenu.swift */; };
 		03D3A50223AA488E0073BB86 /* CreateNewDiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D3A50123AA488E0073BB86 /* CreateNewDiskViewController.swift */; };
+		941E54E92752768D005AEA7C /* ChooseSyncFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E54E82752768D005AEA7C /* ChooseSyncFolderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		03D3A4FD23AA30590073BB86 /* NSApp+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApp+Helper.swift"; sourceTree = "<group>"; };
 		03D3A4FF23AA443A0073BB86 /* StatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenu.swift; sourceTree = "<group>"; };
 		03D3A50123AA488E0073BB86 /* CreateNewDiskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewDiskViewController.swift; sourceTree = "<group>"; };
+		941E54E82752768D005AEA7C /* ChooseSyncFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSyncFolderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		03D3A50323AA489D0073BB86 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				941E54E727527638005AEA7C /* Choose Sync Folder */,
 				03D3A4F323AA2EEB0073BB86 /* Main.storyboard */,
 				03D3A4FF23AA443A0073BB86 /* StatusMenu.swift */,
 				03D3A50423AA48AC0073BB86 /* Create New Disk */,
@@ -186,6 +189,14 @@
 				03D3A50123AA488E0073BB86 /* CreateNewDiskViewController.swift */,
 			);
 			path = "Create New Disk";
+			sourceTree = "<group>";
+		};
+		941E54E727527638005AEA7C /* Choose Sync Folder */ = {
+			isa = PBXGroup;
+			children = (
+				941E54E82752768D005AEA7C /* ChooseSyncFolderController.swift */,
+			);
+			path = "Choose Sync Folder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 			files = (
 				03D3A50223AA488E0073BB86 /* CreateNewDiskViewController.swift in Sources */,
 				03A47EBA23AF79C900D9F9A3 /* Int+Helper.swift in Sources */,
+				941E54E92752768D005AEA7C /* ChooseSyncFolderController.swift in Sources */,
 				03359F8D23AE94B400C02178 /* String+Helper.swift in Sources */,
 				03D3A50023AA443A0073BB86 /* StatusMenu.swift in Sources */,
 				03D3A4FE23AA30590073BB86 /* NSApp+Helper.swift in Sources */,

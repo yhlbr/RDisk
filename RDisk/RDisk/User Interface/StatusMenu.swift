@@ -109,9 +109,13 @@ extension StatusMenu {
         
         let about = statusBarMenu.addItem(withTitle: "About RDisk", action: #selector(openAboutPage), keyEquivalent: "")
         
+        
+        let chooseSyncFolder = statusBarMenu.addItem(withTitle: "Choose Sync Folder", action: #selector(openChooseSyncFolder), keyEquivalent: "")
+
         loginLaunch.target = self
         autocreateDisks.target = self
         about.target = self
+        chooseSyncFolder.target = self
     }
     
     private func prepareQuitSectionFor(_ statusBarMenu: NSMenu) {
@@ -145,6 +149,11 @@ extension StatusMenu: NSUserInterfaceValidations {
     @objc private func openAboutPage() {
         NSApp.orderFrontStandardAboutPanel(self)
     }
+
+    @objc private func openChooseSyncFolder() {
+        let controller = ChooseSyncFolderController();
+        controller.show();
+    }
     
     @objc private func diskTapped(_ menuItem: NSMenuItem) {
         guard RAMDiskManager.shared.mountedRAMDisks.indices.contains(menuItem.tag) else { return }
@@ -154,9 +163,14 @@ extension StatusMenu: NSUserInterfaceValidations {
         viewController.disk = disk
         presentViewController(viewController)
     }
-    
+
     @objc private func quitApp() {
-        
+        RAMDiskManager.shared.backupAllDrivesIfNeeded(callback: {
+            self.showQuitAlert()
+        })
+    }
+    
+    @objc private func showQuitAlert() {
         let alert = NSAlert()
         alert.messageText = "Do you want to eject all RAM disks ?"
         alert.informativeText = "When quitting RDisk you can choose whether you want to leave the disks mounted or eject all of them."
@@ -185,7 +199,8 @@ extension StatusMenu: NSWindowDelegate {
     
     private func presentViewController(_ viewController: NSViewController) {
         NSApp.hideInTray(false)
-        
+        NSApp.activate(ignoringOtherApps: true)
+
         guard let controller = NSStoryboard(name: "Main", bundle: Bundle(for: StatusMenu.self)).instantiateController(withIdentifier: "Window") as? NSWindowController else { return }
         guard let window = controller.window else { return }
         window.delegate = self
